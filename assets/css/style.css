@@ -240,7 +240,8 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 100vh;
+  height: 40vh;
+  position: relative;
   /* background: url("../img/hero-bg.jpg") top center; */
   background: url("../img/image.png") top center;
   background-size: cover;
@@ -504,6 +505,18 @@ section {
   margin-bottom: 10px;
 }
 
+.resume .resume-item .company-highlight {
+  font-size: 14px;
+  background: #ffeeba; /* Highlighter yellow background */
+  color: #856404;      /* Highlighted dark gold text */
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border-radius: 4px;
+}
+
 .resume .resume-item ul {
   padding-left: 20px;
 }
@@ -572,11 +585,13 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border-radius: 8px;
 }
 
 .portfolio .portfolio-wrap::before {
   content: "";
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(5, 13, 24, 0.8);
+  backdrop-filter: blur(2px);
   position: absolute;
   left: 0;
   right: 0;
@@ -614,6 +629,92 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-links a+a {
   border-left: 1px solid #37b3ed;
+}
+
+/* Custom Portfolio Card styling replacing image cards */
+.portfolio .portfolio-card-body {
+  background: #ffffff;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 20px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-card-body {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio .portfolio-card-tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #149ddd;
+  background: #e1f5fe;
+  padding: 3px 8px;
+  border-radius: 50px;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 8px;
+}
+
+.portfolio .portfolio-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #173b6c;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.portfolio .portfolio-card-desc {
+  font-size: 12px;
+  color: #555555;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-card-icon {
+  font-size: 36px;
+  color: rgba(20, 157, 221, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-card-icon {
+  color: rgba(20, 157, 221, 0.7);
+  transform: scale(1.15) rotate(5deg);
+}
+
+.portfolio .portfolio-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: auto;
+}
+
+.portfolio .portfolio-card-tech span {
+  font-size: 10px;
+  background: #f1f3f5;
+  color: #495057;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -853,68 +954,61 @@ section {
   background: #fff;
   width: 100%;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.contact .info > div {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .contact .info i {
   font-size: 20px;
   color: #149ddd;
-  float: left;
-  width: 44px;
-  height: 44px;
   background: #dff3fc;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 44px;
+  height: 44px;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
+  margin-bottom: 12px;
 }
 
 .contact .info h4 {
-  padding: 0 0 0 60px;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   color: #050d18;
+  padding: 0;
 }
 
 .contact .info p {
-  padding: 0 0 10px 60px;
-  margin-bottom: 20px;
+  padding: 0;
+  margin-bottom: 0;
   font-size: 14px;
   color: #173b6c;
 }
 
-.contact .info .email p {
-  padding-top: 5px;
-}
-
-.contact .info .social-links {
-  padding-left: 60px;
-}
-
-.contact .info .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #333;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
+.contact .info p a {
+  color: #173b6c;
   transition: 0.3s;
-  margin-right: 10px;
 }
 
-.contact .info .social-links a:hover {
-  background: #149ddd;
-  color: #fff;
+.contact .info p a:hover {
+  color: #149ddd;
 }
 
-.contact .info .email:hover i,
-.contact .info .address:hover i,
-.contact .info .phone:hover i {
+.contact .info > div:hover i {
   background: #149ddd;
   color: #fff;
 }
